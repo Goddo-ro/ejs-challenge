@@ -33,3 +33,11 @@
 	font-size: 12px;
   color: #fff;
 }
+
+.error {
+  color: #cc0000;
+}
+
+.error span {
+  color: black;
+}

@@ -47,11 +47,16 @@ app.post("/compose", function(req, res) {
 
 app.get("/posts/:postTitle", function(req, res) {
   const postTitle = req.params.postTitle;
+  let hasRendered = false;
   for (let post of posts) {
     if (_.lowerCase(post.title) === _.lowerCase(postTitle)) {
       res.render("post.ejs", {post: post});
+      hasRendered = true;
       break;
     }
+  }
+  if (!hasRendered) {
+    res.render("error.ejs", {title: postTitle});
   }
 });
 
