@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Daily Journal</title>
-  </head>
-  <body>
-    <%- include('partials/header.ejs') %>
-    <h1>Compose</h1>
-    <form action="compose" method="post">
-      <input type="text" name="postTitle">
-      <button type="submit" name="button">Publish</button>
-    </form>
-    <%- include('partials/footer.ejs') %>
-  </body>
-</html>
+<%- include('partials/header.ejs') %>
+  <h1>Compose</h1>
+  <form>
+    <div class="mb-3">
+      <label for="postTitle" class="form-label">Title</label>
+      <input type="text" class="form-control" id="postTitle" name="postTitle">
+    </div>
+    <div class="mb-3">
+      <label for="postText" class="form-label">Post</label>
+      <textarea name="name" rows="4" cols="80" class="form-control" id="postText" name="postText"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Submit</button>
+  </form>
+<%- include('partials/footer.ejs') %>
